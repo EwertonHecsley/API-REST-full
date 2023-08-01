@@ -11,7 +11,7 @@ const verificaCamposCadUsuarios = async (req, res, next) => {
         const usuario = await pool.query(`SELECT email FROM usuarios WHERE email = $1`, [email]);
 
         if (usuario.rows.length > 0) {
-            return res.status(400).json({ mensagem: 'Email já cadastrado no sistema' });
+            return res.status(400).json({ mensagem: 'Já existe usuário com cadastrado com o email informado' });
         };
 
         next();
