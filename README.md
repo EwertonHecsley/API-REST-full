@@ -84,7 +84,3 @@ Este projeto foi desenvolvido com fins educacionais e não é recomendado para u
 Ewerton Hecsley - [https://github.com/EwertonHecsley/API-REST-full](https://github.com/EwertonHecsley/API-REST-full)
 
 ---
-Caso tenha alguma informação adicional que gostaria de incluir ou alguma pergunta específica, sinta-se à vontade para me informar, e eu posso ajustar o README conforme necessário.
-
-
-
