@@ -57,7 +57,23 @@ const login = async (req, res) => {
     };
 };
 
+const cadastrarPessoa = async (req, res) => {
+    const { nome, cidade, idade } = req.body;
+
+    try {
+        const usuario = await pool.query(`
+        INSERT INTO pessoas(nome,cidade,idade)
+        VALUES($1,$2,$3) RETURNING *
+        `, [nome, cidade, idade]);
+
+        return res.status(201).json(usuario.rows[0]);
+    } catch (error) {
+        return res.status(500).json({ mensagem: error.message });
+    };
+};
+
 module.exports = {
     cadastrarUsuario,
-    login
+    login,
+    cadastrarPessoa
 }
