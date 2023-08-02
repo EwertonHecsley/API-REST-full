@@ -59,12 +59,13 @@ const login = async (req, res) => {
 
 const cadastrarPessoa = async (req, res) => {
     const { nome, cidade, idade } = req.body;
+    const { id } = req.usuario;
 
     try {
         const usuario = await pool.query(`
-        INSERT INTO pessoas(nome,cidade,idade)
-        VALUES($1,$2,$3) RETURNING *
-        `, [nome, cidade, idade]);
+        INSERT INTO pessoas(nome,cidade,idade,id_usuario)
+        VALUES($1,$2,$3,$4) RETURNING *
+        `, [nome, cidade, idade, id]);
 
         return res.status(201).json(usuario.rows[0]);
     } catch (error) {
