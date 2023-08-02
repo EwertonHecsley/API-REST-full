@@ -72,7 +72,7 @@ Endpoint protegido por autenticação. Permite cadastrar informações de uma pe
 
 ## Requisitos do Sistema
 
-- Node.js (versão x.x.x ou superior)
+- Node.js (versão 18 ou superior)
 - PostgreSQL (banco de dados)
 
 ## Observações
